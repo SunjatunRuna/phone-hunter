@@ -35,7 +35,7 @@ const displayResult = phones => {
               <p class="card-text">${phone.brand}</p>
             </div>
             <button onclick="loadDetail('${phone.slug}')" class="border border-0 py-2 w-50 bg-info text-white
-             rounded">Click here</button>
+             rounded">More Info</button>
           </div>`;
           searchResult.appendChild(div);
         })
