@@ -2,10 +2,10 @@
 const search = () => {
     const searchPhone = document.getElementById('search-box');
     const searchText = searchPhone.value;
+    spinnerDisplay('block');
     //  if there is empty value then show a error message
     if(searchText == ''){
-        const errorMessage = document.getElementById('error-message');
-        errorMessage.style.display = 'block';
+        errorMessage('block');
     }
     searchPhone.value = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
@@ -14,7 +14,15 @@ const search = () => {
     .then(data => displayResult(data.data));
 
 }
+// spinner function
+const spinnerDisplay = onOff => {
+    document.getElementById('spinner').style.display = onOff;
 
+}
+// error message function
+const errorMessage = display => {
+    document.getElementById('error-message').style.display = display;
+}
 // Create card and display them with search result
 const displayResult = phones => {
     const searchResult = document.getElementById('search-result');
@@ -22,8 +30,7 @@ const displayResult = phones => {
     const firstTwenty = phones.slice(0, 20); // Stop showing result after twenty data
     // If there is invalid data entry then show a error message
     if(phones.length == 0){
-        const errorMessage = document.getElementById('error-message');
-        errorMessage.style.display = 'block';
+        errorMessage('block');
     }
     else{
         firstTwenty.forEach(phone => {
@@ -42,9 +49,10 @@ const displayResult = phones => {
              rounded">More Info</button>
           </div>`;
           searchResult.appendChild(div);
-        })
+        });
+        errorMessage('none');
     }
-
+    spinnerDisplay('none'); // data processing off
 }
 // Every single phone details found out function
 const loadDetail = slug => {
