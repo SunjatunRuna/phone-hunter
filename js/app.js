@@ -1,13 +1,3 @@
-// spinner function
-const spinnerDisplay = onOff => {
-    document.getElementById('spinner').style.display = onOff;
-
-}
-// error message function
-const errorMessage = display => {
-    document.getElementById('error-message').style.display = display;
-}
-
 // Search handler function
 const search = () => {
     const searchPhone = document.getElementById('search-box');
@@ -22,9 +12,17 @@ const search = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayResult(data.data));
+    displayDetail().style.display = none;
+}
+// spinner function
+const spinnerDisplay = onOff => {
+    document.getElementById('spinner').style.display = onOff;
 
 }
-
+// error message function
+const errorMessage = display => {
+    document.getElementById('error-message').style.display = display;
+}
 // Create card and display them with search result
 const displayResult = phones => {
     const searchResult = document.getElementById('search-result');
@@ -57,8 +55,7 @@ const displayResult = phones => {
     spinnerDisplay('none'); // data processing off
 }
 // Every single phone details found out function
-const loadDetail = slug => {
-    console.log(slug);  
+const loadDetail = slug => {  
     const url = `https://openapi.programming-hero.com/api/phone/${slug}`
     fetch(url)
     .then(res => res.json())
@@ -68,7 +65,6 @@ const loadDetail = slug => {
 // Card create and single phone details function: 
 
 const displayDetail = phone =>{
-    console.log(phone);
     const phoneDetail = document.getElementById('phone-detail');
     phoneDetail.textContent = '';
     const div = document.createElement('div');
