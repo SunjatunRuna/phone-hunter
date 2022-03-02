@@ -1,19 +1,3 @@
-// Search handler function
-const search = () => {
-    const searchPhone = document.getElementById('search-box');
-    const searchText = searchPhone.value;
-    spinnerDisplay('block');
-    //  if there is empty value then show a error message
-    if(searchText == ''){
-        errorMessage('block');
-    }
-    searchPhone.value = '';
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayResult(data.data));
-
-}
 // spinner function
 const spinnerDisplay = onOff => {
     document.getElementById('spinner').style.display = onOff;
@@ -23,6 +7,24 @@ const spinnerDisplay = onOff => {
 const errorMessage = display => {
     document.getElementById('error-message').style.display = display;
 }
+
+// Search handler function
+const search = () => {
+    const searchPhone = document.getElementById('search-box');
+    const searchText = searchPhone.value;
+    spinnerDisplay('block');
+    //  if there is empty value then show a error message
+    if(searchText == ''){
+        errorMessage('block'); //error message
+    }
+    searchPhone.value = '';
+    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayResult(data.data));
+
+}
+
 // Create card and display them with search result
 const displayResult = phones => {
     const searchResult = document.getElementById('search-result');
