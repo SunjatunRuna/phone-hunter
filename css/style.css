@@ -8,13 +8,23 @@ body{
     font-family: 'Poppins', sans-serif !important;
 }
 
+/****************
+    input border style
+    *********************/
 input{
     outline: none;
 }
+/**********************
+        more info details style
+        ****************************/
 .card{
     display: block !important;
     border: none !important;
 }
+
+/******************************
+    error message style
+    **************************/
 .error{
     display: none;
 }

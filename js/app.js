@@ -1,6 +1,8 @@
+// Search handler function
 const search = () => {
     const searchPhone = document.getElementById('search-box');
     const searchText = searchPhone.value;
+    //  if there is empty value then show a error message
     if(searchText == ''){
         const errorMessage = document.getElementById('error-message');
         errorMessage.style.display = 'block';
@@ -13,10 +15,12 @@ const search = () => {
 
 }
 
+// Create card and display them with search result
 const displayResult = phones => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     const firstTwenty = phones.slice(0, 20);
+    // If there is invalid data entry then show a error message
     if(phones.length == 0){
         const errorMessage = document.getElementById('error-message');
         errorMessage.style.display = 'block';
@@ -42,6 +46,7 @@ const displayResult = phones => {
     }
 
 }
+// Every single phone details found out function
 const loadDetail = slug => {
     console.log(slug);  
     const url = `https://openapi.programming-hero.com/api/phone/${slug}`
@@ -49,6 +54,8 @@ const loadDetail = slug => {
     .then(res => res.json())
     .then(data => displayDetail(data.data));                                                                                                                
 }
+
+// Card create and single phone details function: 
 
 const displayDetail = phone =>{
     console.log(phone);
