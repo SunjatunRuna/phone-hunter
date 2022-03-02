@@ -79,12 +79,12 @@ const displayDetail = phone =>{
         </li>
         <li>Others: 
         <div class="text-muted" style="font-size: 12px"><br>
-        <span class="fw-bold">WLAN:</span> ${phone.others.WLAN ? phone.others.WLAN: 'no data'} 
+        <span class="fw-bold">WLAN:</span> ${phone?.others?.WLAN ? phone.others.WLAN: 'no data'} 
         <br><span class="fw-bold">USB:</span> 
-        ${phone.others.USB ? phone.others.USB: 'no data'} <br>
-        <span class="fw-bold">Bluetooth:</span> ${phone.others.Bluetooth ? phone.others.Bluetooth: 'no data'}<br>
-        <span class="fw-bold">GPS:</span> ${phone.others.GPS ? phone.others.GPS: 'no data'}<br>
-        <span class="fw-bold">Radio:</span> ${phone.others.Radio ? phone.others.Radio: 'no data'}
+        ${phone?.others?.USB ? phone.others.USB: 'no data'} <br>
+        <span class="fw-bold">Bluetooth:</span> ${phone?.others?.Bluetooth ? phone.others.Bluetooth: 'no data'}<br>
+        <span class="fw-bold">GPS:</span> ${phone?.others?.GPS ? phone.others.GPS: 'no data'}<br>
+        <span class="fw-bold">Radio:</span> ${phone?.others?.Radio ? phone.others.Radio: 'no data'}
         </div>
         </li>
     </ul>
