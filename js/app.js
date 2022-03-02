@@ -19,7 +19,7 @@ const search = () => {
 const displayResult = phones => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
-    const firstTwenty = phones.slice(0, 20);
+    const firstTwenty = phones.slice(0, 20); // Stop showing result after twenty data
     // If there is invalid data entry then show a error message
     if(phones.length == 0){
         const errorMessage = document.getElementById('error-message');
