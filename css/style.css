@@ -1,0 +1,20 @@
+/*******************
+    font face
+    ***************************/
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:wght@200;300&display=swap');
+
+body{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+input{
+    outline: none;
+}
+.card{
+    display: block !important;
+    border: none !important;
+}
+.error{
+    display: none;
+}
